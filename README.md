@@ -4,9 +4,9 @@
 
 ## Platform
 It should work on the following platforms:
-- Mac OSX (10.9.4 tested)
-- linux 64 (not tested)
-- linux 32 (not tested)
+- Mac OSX 10.8 or later (10.9.4 tested)
+- Linux 64 (not tested)
+- Linux 32 (not tested)
 
 ## Quickstart
 - clone this repository `git clone https://github.com/sigmeus/meteor-desktop-app.git`
