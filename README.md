@@ -3,7 +3,7 @@
 ![Screenshot](screenshot.png)
 
 ## Quickstart
-- clone this repository `git clone https://github.com/fix/meteor-desktop-app.git`
+- clone this repository `git clone https://github.com/sigmeus/meteor-desktop-app.git`
 - Install any version of Node.js
 - Install meteor.js `curl https://install.meteor.com/ | sh`.
 - Optional: link your app to ./meteor folder
