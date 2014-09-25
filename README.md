@@ -2,6 +2,12 @@
 
 ![Screenshot](screenshot.png)
 
+## Platform
+It should work on the following platforms:
+- Mac OSX (tested)
+- linux 64 (not tested)
+- linux 32 (not tested)
+
 ## Quickstart
 - clone this repository `git clone https://github.com/sigmeus/meteor-desktop-app.git`
 - Install any version of Node.js
