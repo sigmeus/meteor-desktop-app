@@ -35,7 +35,7 @@ if [ ! -f $ATOM_SHELL_FILE ]; then
 fi
 
 
-if [ ! -f node-v$NODEJS_VERSION-OS_PLATFORM.tar.gz ]; then
+if [ ! -f node-v$NODEJS_VERSION-$OS_PLATFORM.tar.gz ]; then
   cecho "-----> Downloading Nodejs distribution..." $purple
   curl -L -o node-v$NODEJS_VERSION-$OS_PLATFORM.tar.gz http://nodejs.org/dist/v$NODEJS_VERSION/node-v$NODEJS_VERSION-$OS_PLATFORM.tar.gz
   mkdir -p node
