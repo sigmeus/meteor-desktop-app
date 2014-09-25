@@ -4,7 +4,7 @@
 
 ## Platform
 It should work on the following platforms:
-- Mac OSX (tested)
+- Mac OSX (10.9.4 tested)
 - linux 64 (not tested)
 - linux 32 (not tested)
 
