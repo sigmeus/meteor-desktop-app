@@ -5,7 +5,7 @@ BASE=$DIR/..
 
 source $BASE/script/setup.sh
 
-export ROOT_URL=https://localhost:3000
+export ROOT_URL=http://localhost:3000
 export DIR=$BASE
 
 # TODO: issue to kill all processes of meteor when closing atom shell

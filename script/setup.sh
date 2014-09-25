@@ -28,8 +28,6 @@ if [ ! -f node-v$NODEJS_VERSION-darwin-x64.tar.gz ]; then
   curl -L -o node-v$NODEJS_VERSION-darwin-x64.tar.gz http://nodejs.org/dist/v$NODEJS_VERSION/node-v$NODEJS_VERSION-darwin-x64.tar.gz
   mkdir -p node
   tar -xzf node-v$NODEJS_VERSION-darwin-x64.tar.gz --strip-components 1 -C node
-  cp node/bin/node $BASE/resources/node
-  cp node/LICENSE $BASE/resources/NODE_LICENSE.txt
 fi
 
 popd
