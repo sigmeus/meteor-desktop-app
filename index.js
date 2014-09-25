@@ -36,7 +36,7 @@ app.on('ready', function() {
     var windowOptions = {
       width: 800,
       height: 578,
-      frame: true,
+      frame: false,
       resizable: true,
       'web-preferences': {
         'web-security': false

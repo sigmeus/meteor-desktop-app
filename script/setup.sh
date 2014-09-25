@@ -12,7 +12,19 @@ mkdir -p cache
 pushd cache
 
 ATOM_SHELL_VERSION=0.16.3
-ATOM_SHELL_FILE=atom-shell-v$ATOM_SHELL_VERSION-darwin-x64.zip
+OS_PLATFORM=`uname -s`
+OS_PLATFORM=`echo $OS_PLATFORM | tr '[:upper:]' '[:lower:]'`
+MACHINE_TYPE=`uname -m`
+echo $MACHINE_TYPE
+if [ $MACHINE_TYPE == 'x86_64' ]; then
+  OS_PLATFORM=$OS_PLATFORM-x64
+else
+  OS_PLATFORM=$OS_PLATFORM-ia32
+fi
+
+echo $OS_PLATFORM
+
+ATOM_SHELL_FILE=atom-shell-v$ATOM_SHELL_VERSION-$OS_PLATFORM.zip
 NODEJS_VERSION=0.10.32
 
 if [ ! -f $ATOM_SHELL_FILE ]; then
@@ -23,11 +35,11 @@ if [ ! -f $ATOM_SHELL_FILE ]; then
 fi
 
 
-if [ ! -f node-v$NODEJS_VERSION-darwin-x64.tar.gz ]; then
+if [ ! -f node-v$NODEJS_VERSION-OS_PLATFORM.tar.gz ]; then
   cecho "-----> Downloading Nodejs distribution..." $purple
-  curl -L -o node-v$NODEJS_VERSION-darwin-x64.tar.gz http://nodejs.org/dist/v$NODEJS_VERSION/node-v$NODEJS_VERSION-darwin-x64.tar.gz
+  curl -L -o node-v$NODEJS_VERSION-OS_PLATFORM.tar.gz http://nodejs.org/dist/v$NODEJS_VERSION/node-v$NODEJS_VERSION-OS_PLATFORM.tar.gz
   mkdir -p node
-  tar -xzf node-v$NODEJS_VERSION-darwin-x64.tar.gz --strip-components 1 -C node
+  tar -xzf node-v$NODEJS_VERSION-OS_PLATFORM.tar.gz --strip-components 1 -C node
 fi
 
 popd
