@@ -15,16 +15,17 @@ ATOM_SHELL_VERSION=0.16.3
 OS_PLATFORM=`uname -s`
 OS_PLATFORM=`echo $OS_PLATFORM | tr '[:upper:]' '[:lower:]'`
 MACHINE_TYPE=`uname -m`
-echo $MACHINE_TYPE
+echo "OS Platform: $OS_PLATFORM"
+echo "Machine type: $MACHINE_TYPE"
 if [ $MACHINE_TYPE == 'x86_64' ]; then
-  OS_PLATFORM=$OS_PLATFORM-x64
+  OS_ARCH=$OS_PLATFORM-x64
 else
-  OS_PLATFORM=$OS_PLATFORM-ia32
+  OS_ARCH=$OS_PLATFORM-ia32
 fi
 
-echo $OS_PLATFORM
+echo "OS Architecture: $OS_ARCH"
 
-ATOM_SHELL_FILE=atom-shell-v$ATOM_SHELL_VERSION-$OS_PLATFORM.zip
+ATOM_SHELL_FILE=atom-shell-v$ATOM_SHELL_VERSION-$OS_ARCH.zip
 NODEJS_VERSION=0.10.32
 
 if [ ! -f $ATOM_SHELL_FILE ]; then
@@ -35,11 +36,11 @@ if [ ! -f $ATOM_SHELL_FILE ]; then
 fi
 
 
-if [ ! -f node-v$NODEJS_VERSION-$OS_PLATFORM.tar.gz ]; then
+if [ ! -f node-v$NODEJS_VERSION-$OS_ARCH.tar.gz ]; then
   cecho "-----> Downloading Nodejs distribution..." $purple
-  curl -L -o node-v$NODEJS_VERSION-$OS_PLATFORM.tar.gz http://nodejs.org/dist/v$NODEJS_VERSION/node-v$NODEJS_VERSION-$OS_PLATFORM.tar.gz
+  curl -L -o node-v$NODEJS_VERSION-$OS_ARCH.tar.gz http://nodejs.org/dist/v$NODEJS_VERSION/node-v$NODEJS_VERSION-$OS_ARCH.tar.gz
   mkdir -p node
-  tar -xzf node-v$NODEJS_VERSION-$OS_PLATFORM.tar.gz --strip-components 1 -C node
+  tar -xzf node-v$NODEJS_VERSION-$OS_ARCH.tar.gz --strip-components 1 -C node
 fi
 
 popd
