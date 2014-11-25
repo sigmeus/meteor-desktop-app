@@ -11,7 +11,10 @@ mkdir -p cache
 
 pushd cache
 
-ATOM_SHELL_VERSION=0.16.3
+NODEJS_VERSION=0.10.33
+ATOM_SHELL_VERSION=0.19.4
+ATOM_SHELL_FILE=atom-shell-v$ATOM_SHELL_VERSION-$OS_ARCH.zip
+
 OS_PLATFORM=`uname -s`
 OS_PLATFORM=`echo $OS_PLATFORM | tr '[:upper:]' '[:lower:]'`
 MACHINE_TYPE=`uname -m`
@@ -25,8 +28,6 @@ fi
 
 echo "OS Architecture: $OS_ARCH"
 
-ATOM_SHELL_FILE=atom-shell-v$ATOM_SHELL_VERSION-$OS_ARCH.zip
-NODEJS_VERSION=0.10.32
 
 if [ ! -f $ATOM_SHELL_FILE ]; then
   cecho "-----> Downloading Atom Shell..." $purple
