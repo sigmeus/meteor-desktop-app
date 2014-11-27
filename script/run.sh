@@ -12,4 +12,10 @@ export DIR=$BASE
 #cd $BASE/meteor
 #exec 3< <(meteor)
 #sed '/App running at/q' <&3 ; cat <&3 &
-NODE_ENV=development $BASE/cache/atom-shell/Atom.app/Contents/MacOS/Atom $BASE
+if [ ${OS_PLATFORM} == "linux" ] ; then
+  NODE_ENV=development $BASE/cache/atom-shell/atom $BASE
+elif [ ${OS_PLATFORM} == "darwin" ] ; then
+  NODE_ENV=development $BASE/cache/atom-shell/Atom.app/Contents/MacOS/Atom $BASE
+else
+  echo "Unknown platform (${OS_PLATFORM}). Exiting.."
+fi
