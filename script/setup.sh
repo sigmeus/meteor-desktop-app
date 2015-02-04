@@ -13,7 +13,6 @@ pushd cache
 
 NODEJS_VERSION=0.10.33
 ATOM_SHELL_VERSION=0.19.4
-ATOM_SHELL_FILE=atom-shell-v$ATOM_SHELL_VERSION-$OS_ARCH.zip
 
 OS_PLATFORM=`uname -s`
 OS_PLATFORM=`echo $OS_PLATFORM | tr '[:upper:]' '[:lower:]'`
@@ -28,6 +27,7 @@ fi
 
 echo "OS Architecture: $OS_ARCH"
 
+ATOM_SHELL_FILE=atom-shell-v$ATOM_SHELL_VERSION-$OS_ARCH.zip
 
 if [ ! -f $ATOM_SHELL_FILE ]; then
   cecho "-----> Downloading Atom Shell..." $purple
